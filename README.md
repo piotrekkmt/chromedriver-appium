@@ -18,13 +18,13 @@ Chromedriver for Mac OS X version 2.20 with a Crosswalk fix, exposing androidDev
      }
  ```
 
-**Java example:**
+ **Java example:**
+  ```
+      caps.setCapability("androidDeviceSocket", ANDROID_APP_PACKAGE + "_devtools_remote");
+      ChromeOptions chromeOptions = new ChromeOptions();
+      chromeOptions.setExperimentalOption("androidDeviceSocket", ANDROID_APP_PACKAGE + "_devtools_remote");
+      caps.setCapability(ChromeOptions.CAPABILITY,chromeOptions);
  ```
-     caps.setCapability("androidDeviceSocket", ANDROID_APP_PACKAGE + "_devtools_remote");
-     ChromeOptions chromeOptions = new ChromeOptions();
-     chromeOptions.setExperimentalOption("androidDeviceSocket", ANDROID_APP_PACKAGE + "_devtools_remote");
-     caps.setCapability(ChromeOptions.CAPABILITY,chromeOptions);
-```
 
 ### History
 
@@ -140,5 +140,5 @@ index ca9d504..8b64565 100644
 
 
 #### Fix 2 - Minimum version
-Also, due to the fact that our Crosswalk uses Chrome 43 and Chromedriver 2.20 required a minimum of 46, changed the minimum required version to 0.0.1 in /src/chrome/test/chromedriver/chrome/version.h
- ** If you need that kind of check in your chromedriver please don't use this version **
+Also, due to the fact that our Crosswalk uses Chrome 43 and Chromedriver 2.20 required a minimum of 46, changed the minimum required version to 0.0.1 in /src/chrome/test/chromedriver/chrome/version.h    
+**If you need that kind of check in your chromedriver please don't use this version**
